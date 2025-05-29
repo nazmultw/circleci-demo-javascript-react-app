@@ -7,12 +7,11 @@ const Cards = ({ cards }) => {
         <div class="row">
        {cards.map((card) => (
             <span>
-                { card.data.crosspost_parent == null && card.data.media == null ? 
-                <div class="card mb-4">
-                    <img src={ card.data.url } alt="" width="400px" height="300px"/>
-                </div>
-                : ""
-                }
+                { card.data.url.endsWith('.jpg') ? 
+                    <div class="card mb-4">
+                        <img src={ card.data.url } alt="" width="400px" height="300px"/>
+                    </div>
+                : "" }
             </span>
        ))}
        </div>
